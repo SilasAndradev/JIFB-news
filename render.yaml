@@ -7,6 +7,6 @@ services:
     startCommand: 'python -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker'
     envVars:
       - key: SECRET_KEY
-        generateValue: django-insecure-hc*xao=#2ym^o(g5h=j80exoqmdy=f)qf-8z9s2b=(6gms!*vv
+        gerenerateValue: true
       - key: DEBUG
         value: False
