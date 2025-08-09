@@ -29,6 +29,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # CORRIGIDO: Converte a string 'DEBUG' de .env para booleano
 DEBUG = os.getenv("DEBUG", "False").lower() == "true" 
 
+CSRF_TRUSTED_ORIGINS = [
+    'jornal-if-baiano.onrender.com',
+]
+
 ALLOWED_HOSTS = ['jornal-if-baiano.onrender.com', 'jornalifbaiano.com.br', 'jornalifbaiano.com']
 if DEBUG: # Se DEBUG for True, permite localhost e 127.0.0.1
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -56,7 +60,6 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,13 +135,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_ROOT = '/opt/render/project/src/staticfiles'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# MEDIA files (User-uploaded content)
-# REMOVIDA A DUPLICAÇÃO. MANTIDA APENAS UMA VEZ AQUI.
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
 
