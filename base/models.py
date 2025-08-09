@@ -12,8 +12,9 @@ class Perfil(models.Model):
     
     foto_de_perfil = models.ImageField(
         upload_to="uploads/perfis",
-        blank=True
-        )
+        blank=True,
+        default="static/img/default.jpg"
+    )
     
     pode_comentar = models.BooleanField(
         default=True

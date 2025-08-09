@@ -7,16 +7,16 @@ from django.contrib.auth.models import User
 class EditarUserProfileForm(ModelForm):
     class Meta:
         model = Perfil
-        fields = ['bio', 'foto_de_perfil']
-        exclude = ['user']
+        fields = ['bio', ]
+        exclude = ['user','foto_de_perfil']
         widgets = {
             'bio': forms.TextInput(attrs={'class': 'form-control'}),
-            'foto_de_perfil': forms.FileInput(attrs={'class': 'form-control'}),
+            #'foto_de_perfil': forms.FileInput(attrs={'class': 'form-control'}),
         }
 
-    def __init__(self, *args, **kwargs):
+    """def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['foto_de_perfil'].required = False
+        self.fields['foto_de_perfil'].required = False"""
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True, label='E-mail')
