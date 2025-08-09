@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # CORRIGIDO: Converte a string 'DEBUG' de .env para booleano
 DEBUG = os.getenv("DEBUG", "False").lower() == "true" 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jornal-if-baiano.onrender.com', 'jornalifbaiano.com.br', 'jornalifbaiano.com']
 if DEBUG: # Se DEBUG for True, permite localhost e 127.0.0.1
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
