@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 class Noticia(models.Model):
-    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    autor = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     título = models.CharField(max_length=500)
     
     corpo = models.TextField(blank=True, null=True) 
