@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # CORRIGIDO: Converte a string 'DEBUG' de .env para booleano
-DEBUG = os.getenv("DEBUG", "False").lower() == "true" 
+DEBUG = os.getenv("DEBUG")
 
 CSRF_TRUSTED_ORIGINS = [
     'https://jornal-if-baiano.onrender.com',
