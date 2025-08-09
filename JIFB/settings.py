@@ -26,16 +26,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 SECRET_KEY = os.getenv("SECRET_KEY")
 
-# CORRIGIDO: Converte a string 'DEBUG' de .env para booleano
-DEBUG = os.getenv("DEBUG")
+
 
 CSRF_TRUSTED_ORIGINS = [
     'https://jornal-if-baiano.onrender.com',
 ]
 
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "t")
+
 ALLOWED_HOSTS = ['jornal-if-baiano.onrender.com', 'jornalifbaiano.com.br', 'jornalifbaiano.com']
-if DEBUG: # Se DEBUG for True, permite localhost e 127.0.0.1
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+if DEBUG:
+    ALLOWED_HOSTS += ['127.0.0.1', 'localhost']
+
 
 
 # Application definition
