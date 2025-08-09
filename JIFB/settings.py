@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true" 
 
 CSRF_TRUSTED_ORIGINS = [
-    'jornal-if-baiano.onrender.com',
+    'https://jornal-if-baiano.onrender.com',
 ]
 
 ALLOWED_HOSTS = ['jornal-if-baiano.onrender.com', 'jornalifbaiano.com.br', 'jornalifbaiano.com']
