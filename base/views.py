@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
+from JIFB.settings import BASE_DIR
+
 from news.models import Noticia
 from .models import Perfil
 from users.forms import CustomUserCreationForm
@@ -61,7 +63,8 @@ def RegisterUser(request):
                 user=user,
                 pode_comentar=True,
                 pode_alterar_foto_de_perfil=True,
-                foto_de_perfil="perfis/default.jpg"
+                foto_de_perfil=f"{BASE_DIR}/static/img/default.jpg",
+                bio='Sou novo aqui!'
             )
 
             login(request, user)
