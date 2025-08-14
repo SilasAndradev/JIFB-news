@@ -39,7 +39,7 @@ def NoticiaPublicar(request):
             
         if noticia_form.is_valid() and arquivo_form.is_valid():
             noticia = noticia_form.save(commit=False)
-            noticia.autor = request.user
+            noticia.autor = Perfil.objects.get(user=request.user)
 
             if noticia.corpo:
                 
