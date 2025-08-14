@@ -1,3 +1,10 @@
+/* ======== Reset básico ======== */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ======== Rodapé ======== */
 .footer {
   background-color: #745dab;
@@ -9,6 +16,7 @@
   overflow-x: hidden;
 }
 
+/* Container do rodapé */
 .footer-container {
   display: flex;
   justify-content: space-evenly;
@@ -17,22 +25,27 @@
   flex-wrap: wrap;
 }
 
+/* Imagens do rodapé */
 .footer-image {
   width: 250px;
   height: auto;
+  margin: 0;
 }
 
 .footer-logo-jif {
   width: 90px;
   height: 90px;
+  margin: 0;
 }
 
+/* Linha horizontal */
 .footer hr {
   margin: 20px auto;
   border-color: #fff;
   width: 80%;
 }
 
+/* Texto e links de direitos autorais */
 .footer p {
   margin-top: 20px;
   font-size: 14px;
@@ -42,29 +55,16 @@
 .direitoautoral:link,
 .direitoautoral:visited,
 .direitoautoral:active {
-  color: #000000;
+  color: #000;
   text-decoration: none;
 }
 
 .direitoautoral:hover {
-  color: #555555;
+  color: #555;
   text-decoration: underline;
 }
 
-/* ======== Media Queries ======== */
-
-/* Até 480px */
-@media (max-width: 480px) {
-  .footer p {
-    font-size: 12px;
-  }
-
-  .footer-image {
-    width: 200px;
-  }
-}
-
-/* Até 768px */
+/* ======== Responsividade ======== */
 @media (max-width: 768px) {
   .footer {
     margin-top: 200px;
@@ -81,5 +81,15 @@
 
   .footer-image {
     width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-image {
+    width: 200px;
+  }
+
+  .footer p {
+    font-size: 12px;
   }
 }
