@@ -63,7 +63,7 @@ def RegisterUser(request):
                 user=user,
                 pode_comentar=True,
                 pode_alterar_foto_de_perfil=True,
-                foto_de_perfil=f"{BASE_DIR}/static/img/default.jpg",
+                foto_de_perfil="static/img/default.jpg",
                 bio='Sou novo aqui!'
             )
 
