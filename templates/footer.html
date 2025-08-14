@@ -1,7 +1,21 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
-<div>
-      <p>
-      ©  Criado por <a class="direitoautoral" rel="noreferrer" target="_blank" href="https://github.com/SilasAndradev/">Silas Andrade</a> e <a class="direitoautoral" rel="noreferrer" target="_blank" href="https://github.com/Ghs-d/">Guilherme Henrique</a>
-      </p>
+<div class="footer">
+    <div class="footer-container">
+        <!-- Logo do JIFB -->
+        <img src="{% static 'img/LOGO_JIFB_SEM_FUNDO.png' %}" alt="Logo JIFB" class="footer-logo-jif">
+
+        <!-- Imagem adicional do rodapé -->
+        <img src="{% static 'img/footer_image.png' %}" alt="Imagem Rodapé" class="footer-image">
+    </div>
+
+    <hr>
+
+    <div>
+        <p>
+            © Criado por 
+            <a class="direitoautoral" rel="noreferrer" target="_blank" href="https://github.com/SilasAndradev/">Silas Andrade</a> 
+            e 
+            <a class="direitoautoral" rel="noreferrer" target="_blank" href="https://github.com/Ghs-d/">Guilherme Henrique</a>
+        </p>
+    </div>
 </div>
